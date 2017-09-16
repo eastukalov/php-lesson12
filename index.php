@@ -6,9 +6,6 @@ $string = '';
 $sql = "SELECT * FROM books";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $a = $_POST;
-    echo '';
-
 
     if (isset($_POST['isbn']) && $_POST['isbn'] != '') {
         $a=$_POST['isbn'];
@@ -53,12 +50,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 </head>
 <body>
     <h1>Библиотека успешного человека</h1>
-    <form method='POST' onsubmit="return myFunc()">
+    <form method='POST'>
         <input type="text" name="isbn" placeholder='ISBN' value="<?=(isset($_POST['isbn'])?$_POST['isbn']:'')?>">
         <input type="text" name="name" placeholder='Название книги' value="<?=(isset($_POST['name'])?$_POST['name']:'')?>">
         <input type="text" name="author" placeholder='Автор книги' value="<?=(isset($_POST['author'])?$_POST['author']:'')?>">
-        <button type="submit">Поиск</button>
-<!--        <input type='submit' value='Поиск'>-->
+        <input type='submit' value='Поиск'>
     </form>
     <table>
         <thead>
