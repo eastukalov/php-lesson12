@@ -1,6 +1,6 @@
 <?php
 
-$pdo = new PDO("mysql:host=localhost;dbname=global", "root");
+$pdo = new PDO("mysql:host=localhost;dbname=global;charset=utf8", "root");
 $array = [];
 $string = '';
 $sql = "SELECT * FROM books";
